@@ -1,11 +1,11 @@
 from db.run_sql import run_sql
 
 from models.mix import Mix
-import repositories.source_repository as source_repository
+import repositories.dj_repository as dj_repository
 
 def save(mix):
-    sql = "INSERT INTO mixes (name, description, source_id) VALUES (%s, %s, %s) RETURNING *"
-    values = [mix.name, mix.description, mix.source.id]
+    sql = "INSERT INTO mixes (title, description, dj_id) VALUES (%s, %s, %s) RETURNING *"
+    values = [mix.title, mix.description, mix.dj.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     mix.id = id
@@ -18,8 +18,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        source = source_repository.select(row['source_id'])
-        mix = Mix(row['name'], row['description'], source, row['id'])
+        dj = dj_repository.select(row['dj_id'])
+        mix = Mix(row['title'], row['description'], dj, row['id'])
         mixes.append(mix)
     return mixes
 
@@ -30,8 +30,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        source = source_repository.select(result['source_id'])
-        mix = Mix(result['name'], result['description'], source, result['id'])
+        dj = dj_repository.select(result['dj_id'])
+        mix = Mix(result['title'], result['description'], dj, result['id'])
     return mix
 
 def delete_all():
@@ -44,6 +44,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(mix):
-    sql = "UPDATE mixes SET (name, description, source_id) = (%s, %s, %s) WHERE ID = %s"
-    values = [mix.name, mix.description, mix.source.id, mix.id]
+    sql = "UPDATE mixes SET (title, description, dj_id) = (%s, %s, %s) WHERE ID = %s"
+    values = [mix.title, mix.description, mix.dj.id, mix.id]
     run_sql(sql, values)

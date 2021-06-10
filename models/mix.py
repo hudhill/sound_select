@@ -1,6 +1,7 @@
 class Mix:
 
-    def __init__(self, name, description, source):
-        self.name = name
+    def __init__(self, title, description, dj, id = None):
+        self.title = title
         self.description = description
-        self.source = source
+        self.dj = dj
+        self.id = id

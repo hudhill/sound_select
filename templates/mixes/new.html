@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<form action="/mixes" method="POST">
+  <div>
+    <label for="title">Title:</label>
+    <input id="title" name="title" type="text" required>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <input id="description" name="description" type="text" required>
+  </div>
+  <div>
+    <label for="dj">DJ:</label>
+    <select id="dj" name="dj.id">
+      {% for dj in djs %} 
+        <option value="{{ dj.id }}">{{ dj.name }}</option>
+      {% endfor %} 
+    </select>
+    <a href="/djs/new_dj">Add New DJ</a>
+  </div>
+
+  <button type="submit">Submit</button>
+
+</form>

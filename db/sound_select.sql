@@ -1,8 +1,8 @@
-DROP TABLE sources;
+DROP TABLE djs;
 DROP TABLE mixes;
 DROP TABLE track_lists;
 
-CREATE TABLE sources (
+CREATE TABLE djs (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
 );
@@ -15,7 +15,7 @@ CREATE TABLE track_lists (
 
 CREATE TABLE mixes (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    title VARCHAR(255),
     description TEXT,
-    source_id INT REFERENCES sources(id)
+    dj_id INT REFERENCES djs(id)
 );

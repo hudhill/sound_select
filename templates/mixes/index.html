@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+{% for mix in mixes %} 
+  <div>
+    <div>
+      <a href="/mixes/{{mix.id}}">{{ mix.title }}</a>
+      <p>{{ mix.dj.name }}</p>
+    </div>
+  </div>
+
+{% endfor %} 
+
+{% endblock %}
