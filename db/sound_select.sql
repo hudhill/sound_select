@@ -4,7 +4,8 @@ DROP TABLE track_lists;
 
 CREATE TABLE djs (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    bio TEXT
 );
 
 CREATE TABLE track_lists (

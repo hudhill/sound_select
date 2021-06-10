@@ -2,13 +2,18 @@
 {% block content %} 
 
 {% for mix in mixes %} 
+  <hr/>
   <div>
     <div>
-      <a href="/mixes/{{mix.id}}">{{ mix.title }}</a>
+      <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
       <p>{{ mix.dj.name }}</p>
     </div>
+    <div>
+      <form action="/mixes/{{ mix.id }}/delete" method="POST">
+        <button>delete</button>
+      </form>
+    </div>
   </div>
-
 {% endfor %} 
 
 {% endblock %}

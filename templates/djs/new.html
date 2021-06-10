@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<form action="/djs" method="POST">
+
+  <div>
+    <label for="name">DJ Name:</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+
+  <div>
+    <label for="bio">Bio:</label>
+    <input id="bio" name="bio" type="text" required>
+  </div>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

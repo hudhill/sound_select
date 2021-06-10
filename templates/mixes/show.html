@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<div>
+  <h1>{{ mix.dj.name }}: {{ mix.title }}</h1>
+  <hr/>
+  <p>{{ mix.description }}</p>
+  <a href="/mixes/{{ mix.id }}/edit">Edit</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<div>
+  <a href="/djs/new">Add New DJ</a>
+</div>
+
+{% for dj in djs %} 
+  <hr/>
+  <div>
+    <div>
+      <a href="/djs/{{ dj.id }}">{{ dj.name }}</a>
+    </div>
+    <p>{{ dj.bio }}</p>
+    <div>
+      <form action="/djs/{{ dj.id }}/delete" method="POST">
+        <button>delete</button>
+      </form>
+    </div>
+  </div>
+{% endfor %} 
+
+{% endblock %}

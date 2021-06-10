@@ -1,15 +1,15 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-<form action="/mixes" method="POST">
+<form action="/mixes/{{ mix.id }}" method="POST">
 
   <div>
     <label for="title">Title:</label>
-    <input id="title" name="title" type="text" required>
+    <input id="title" name="title" value="{{ mix.title }}" type="text" required>
   </div>
   <div>
     <label for="description">Description:</label>
-    <input id="description" name="description" type="text" required>
+    <input id="description" name="description" type="text" value="{{ mix.description }}" required>
   </div>
   <div>
     <label for="dj">DJ:</label>
@@ -20,7 +20,7 @@
     </select>
     <a href="/djs/new">Add New DJ</a>
   </div>
-
+    
   <button type="submit">Submit</button>
 
 </form>

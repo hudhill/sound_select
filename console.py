@@ -8,15 +8,15 @@ import repositories.mix_repository as mix_repository
 mix_repository.delete_all()
 dj_repository.delete_all()
 
-dj_1 = Dj("Ruling Planet")
+dj_1 = Dj("Ruling Planet", "Mikayla's bio")
 dj_repository.save(dj_1)
-dj_2 = Dj("Max Salty")
+dj_2 = Dj("Max Salty", "Max's bio")
 dj_repository.save(dj_2)
-dj_3 = Dj("Saffron")
+dj_3 = Dj("Saffron", "Ari's bio")
 dj_repository.save(dj_3)
-dj_4 = Dj("Radha")
+dj_4 = Dj("Radha", "Radha's bio")
 dj_repository.save(dj_4)
-dj_5 = Dj("Zach")
+dj_5 = Dj("Zach", "Zach's bio")
 dj_repository.save(dj_5)
 
 mix_1 = Mix("after hours", 
