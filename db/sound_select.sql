@@ -11,8 +11,8 @@ CREATE TABLE mixes (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     description TEXT,
-    -- mix image
-    -- tracklist image
+    mix_img VARCHAR(255),
+    tracklist_img VARCHAR(255),
     genres VARCHAR(255),
     -- soundlcoud link
     dj_id INT REFERENCES djs(id)
