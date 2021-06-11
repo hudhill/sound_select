@@ -2,11 +2,15 @@
 {% block content %} 
 
 {% for mix in mixes %} 
+  {% set genres = mix.genres.split(",") %}
   <hr/>
   <div>
     <div>
       <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
       <p>{{ mix.dj.name }}</p>
+      <p>
+        ({% for genre in genres %}{% if loop.index == loop.length %}{{ genre }}{% else %}{{ genre }}, {% endif %}{% endfor %})
+      </p>
     </div>
     <div>
       <form action="/mixes/{{ mix.id }}/delete" method="POST">

@@ -1,10 +1,13 @@
 {% extends "base.html" %} 
 {% block content %} 
 
+{% set genres = mix.genres.split(",") %}
+
 <div>
   <h1>{{ mix.dj.name }}: {{ mix.title }}</h1>
   <hr/>
   <p>{{ mix.description }}</p>
+  <p>{% for genre in genres %}{% if loop.index == loop.length %}#{{ genre }}{% else %}#{{ genre }}, {% endif %}{% endfor %}</p>
   <a href="/mixes/{{ mix.id }}/edit">Edit</a>
 </div>
 

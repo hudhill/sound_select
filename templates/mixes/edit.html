@@ -7,10 +7,17 @@
     <label for="title">Title:</label>
     <input id="title" name="title" value="{{ mix.title }}" type="text" required>
   </div>
+
   <div>
     <label for="description">Description:</label>
     <input id="description" name="description" type="text" value="{{ mix.description }}" required>
   </div>
+
+  <div> <!-- you currently have to input genres exactly as: 'genre,gen,re', not ideal. Would be good to have options too -->
+    <label for="genres">genre tags:</label>
+    <input id="genres" name="genres" value="{{ mix.genres }}" type="text">
+  </div>
+
   <div>
     <label for="dj">DJ:</label>
     <select id="dj" name="dj_id">

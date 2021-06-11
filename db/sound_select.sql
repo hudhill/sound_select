@@ -1,22 +1,25 @@
 DROP TABLE djs;
 DROP TABLE mixes;
-DROP TABLE track_lists;
 
 CREATE TABLE djs (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    bio TEXT
-);
-
-CREATE TABLE track_lists (
-    id SERIAL PRIMARY KEY, 
-    artist VARCHAR(255), 
-    song VARCHAR(255)
+    bio TEXT  -- need to get these
 );
 
 CREATE TABLE mixes (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     description TEXT,
+    -- mix image
+    -- tracklist image
+    genres VARCHAR(255),
+    -- soundlcoud link
     dj_id INT REFERENCES djs(id)
 );
+
+-- CREATE TABLE genres (
+--     id SERIAL PRIMARY KEY,
+--     genre VARCHAR(255),
+--     mix_id INT REFERENCES mixes(id)
+-- );

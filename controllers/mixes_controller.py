@@ -27,9 +27,10 @@ def new_mix():
 def create_mix():
     title = request.form["title"]
     description = request.form["description"]
+    genres = request.form["genres"]
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)
-    new_mix = Mix(title, description, dj)
+    new_mix = Mix(title, description, genres, dj)
     mix_repository.save(new_mix)
 
     return redirect("/mixes")
@@ -54,9 +55,10 @@ def edit_mix(id):
 def update_mix(id):
     title = request.form["title"]
     description = request.form["description"]
+    genres = request.form["genres"]
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)
-    updated_mix = Mix(title, description, dj, id)
+    updated_mix = Mix(title, description, genres, dj, id)
     mix_repository.update(updated_mix)
 
     return redirect("/mixes")
