@@ -6,11 +6,21 @@ import repositories.genre_repository as genre_repository
 
 def save(mix):
     sql = "INSERT INTO mixes (title, description, mix_img, tracklist_img, genre_tags, audio_link, genre_id, dj_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    
+    genres = genre_repository.select_all()
+    genre_names = []
+    for genre in genres:
+        genre_names.append(genre.name)
+        if mix.genre.name == genre.name:
+            mix.genre.id = genre.id
+
+    if mix.genre.name not in genre_names:
+        genre_repository.save(mix.genre)
+
     values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.genre.id, mix.dj.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     mix.id = id
-    genre_repository.save(mix.genre)
     return mix
 
 def select_all():
@@ -49,5 +59,5 @@ def delete(id):
 
 def update(mix):
     sql = "UPDATE mixes SET (title, description, mix_img, tracklist_img, genre_tags, audio_link, genre_id, dj_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE ID = %s"
-    values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genres, mix.audio_link, mix.genre.id, mix.dj.id, mix.id]
+    values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.genre.id, mix.dj.id, mix.id]
     run_sql(sql, values)

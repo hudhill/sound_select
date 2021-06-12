@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<form action="/genres" method="POST">
+
+  <div>
+    <label for="name">Genre:</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

@@ -9,6 +9,18 @@ def save(genre):
     id = results[0]['id']
     genre.id = id
 
+def select_all():
+    genres = []
+
+    sql = "SELECT * FROM genres"
+    results = run_sql(sql)
+
+    for row in results:
+        genre = Genre(row['name'], row['id'])
+        genres.append(genre)
+
+    return genres
+
 def select(id):
     genre = None
     sql = "SELECT * FROM genres WHERE id = %s"
@@ -19,3 +31,7 @@ def select(id):
         genre_dict = result[0]
         genre = Genre(genre_dict['name'], genre_dict['id'])
     return genre
+
+def delete_all():
+    sql = "DELETE FROM genres"
+    run_sql(sql)

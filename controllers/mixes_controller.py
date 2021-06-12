@@ -21,8 +21,9 @@ def mixes():
 @mixes_blueprint.route("/mixes/new")
 def new_mix():
     djs = dj_repository.select_all()
+    genres = genre_repository.select_all()
 
-    return render_template("mixes/new.html", djs=djs)
+    return render_template("mixes/new.html", djs=djs, genres=genres)
 
 # create
 @mixes_blueprint.route("/mixes", methods = ["POST"])
@@ -54,8 +55,9 @@ def show_mix(id):
 def edit_mix(id):
     mix = mix_repository.select(id)
     djs = dj_repository.select_all()
+    genres = genre_repository.select_all()
 
-    return render_template("mixes/edit.html", mix=mix, djs=djs)
+    return render_template("mixes/edit.html", mix=mix, djs=djs, genres=genres)
 
 # update
 @mixes_blueprint.route("/mixes/<id>", methods = ["POST"])
@@ -66,7 +68,7 @@ def update_mix(id):
     tracklist_img = request.form["tracklist_img"]
     genre_tags = request.form["genre_tags"]
     audio_link = request.form["audio_link"]
-    genre_id = request.form["genre"]
+    genre_id = request.form["genre_id"]
     genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)

@@ -2,14 +2,13 @@
 {% block content %} 
 
 {% for mix in mixes %} 
-  {% set genre_tags = mix.genre_tags.split(",") %}
   <hr/>
   <div>
 
     <div>
       <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
       <p>{{ mix.dj.name }}</p>
-      <p>({% for genre_tag in genre_tags %}{% if loop.index == loop.length %}{{ genre_tag }}{% else %}{{ genre_tag }}, {% endif %}{% endfor %})</p>
+      <p>({{ mix.genre.name }})</p>
     </div>
     
     <a href="{{ mix.audio_link }}">-->soundcloud</a> <!-- format better -->

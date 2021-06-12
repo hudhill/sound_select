@@ -5,9 +5,11 @@ from models.dj import Dj
 from models.genre import Genre
 import repositories.dj_repository as dj_repository
 import repositories.mix_repository as mix_repository
+import repositories.genre_repository as genre_repository
 
 mix_repository.delete_all()
 dj_repository.delete_all()
+genre_repository.delete_all()
 
 dj_1 = Dj("Ruling Planet", "Mikayla's bio")
 dj_repository.save(dj_1)
