@@ -1,14 +1,16 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-{% set genres = mix.genres.split(",") %}
+{% set genre_tags = mix.genre_tags.split(",") %}
 
 <div>
   <h1>{{ mix.dj.name }} - {{ mix.title }}</h1>
   <hr/>
   <p>{{ mix.description }}</p>
-  <p>{% for genre in genres %}{% if loop.index == loop.length %}{{ genre }}{% else %}{{ genre }}, {% endif %}{% endfor %}</p>
+  <p>--{% for genre_tag in genre_tags %}{% if loop.index == loop.length %}{{ genre_tag }}{% else %}{{ genre_tag }}, {% endif %}{% endfor %}--</p>
 </div>
+
+<a href="{{ mix.audio_link }}">>>SOUNDCLOUD<<</a> <!-- format better -->
 
 <div>
   <img src="/static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="500" height="500" />

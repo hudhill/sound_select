@@ -14,8 +14,23 @@
   </div>
 
   <div> <!-- you currently have to input genres exactly as: 'genre,gen,re', not ideal. Would be good to have options too -->
-    <label for="genres">genre tags:</label>
-    <input id="genres" name="genres" value="{{ mix.genres }}" type="text">
+    <label for="genre_tags">genre tags:</label>
+    <input id="genre_tags" name="genre_tags" value="{{ mix.genre_tags }}" type="text">
+  </div>
+
+  <div>
+    <label for="genre">Primary Genre Tag:</label>
+    <select id="genre" name="genre_id">
+      {% for genre in genres %}
+        <option value="{{ genre.id }}">{{ genre.name }}</option>
+      {% endfor %}
+    </select>
+    <a href="/genres/new">Add New Genre</a>
+  </div>
+
+  <div>
+    <label for="audio_link">Audio Link:</label> <!-- prob better way to do this too -->
+    <input id="audio_link" name="audio_link" value="{{ mix.audio_link }}" type="text">
   </div>
 
   <div>

@@ -3,8 +3,10 @@ from flask import Blueprint
 
 from models.mix import Mix
 from models.dj import Dj
+from models.genre import Genre
 import repositories.mix_repository as mix_repository
 import repositories.dj_repository as dj_repository
+import repositories.genre_repository as genre_repository
 
 mixes_blueprint = Blueprint("mixes", __name__)
 
@@ -29,10 +31,13 @@ def create_mix():
     description = request.form["description"]
     mix_img = request.form["mix_img"]
     tracklist_img = request.form["tracklist_img"]
-    genres = request.form["genres"]
+    genre_tags = request.form["genre_tags"]
+    audio_link = request.form["audio_link"]
+    genre_id = request.form["genre_id"]
+    genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)
-    new_mix = Mix(title, description, mix_img, tracklist_img, genres, dj)
+    new_mix = Mix(title, description, mix_img, tracklist_img, genre_tags, audio_link, genre, dj)
     mix_repository.save(new_mix)
 
     return redirect("/mixes")
@@ -59,10 +64,13 @@ def update_mix(id):
     description = request.form["description"]
     mix_img = request.form["mix_img"]
     tracklist_img = request.form["tracklist_img"]
-    genres = request.form["genres"]
+    genre_tags = request.form["genre_tags"]
+    audio_link = request.form["audio_link"]
+    genre_id = request.form["genre"]
+    genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)
-    updated_mix = Mix(title, description, mix_img, tracklist_img, genres, dj, id)
+    updated_mix = Mix(title, description, mix_img, tracklist_img, genre_tags, audio_link, genre, dj, id)
     mix_repository.update(updated_mix)
 
     return redirect("/mixes")

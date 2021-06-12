@@ -2,6 +2,7 @@ import pdb
 
 from models.mix import Mix
 from models.dj import Dj
+from models.genre import Genre
 import repositories.dj_repository as dj_repository
 import repositories.mix_repository as mix_repository
 
@@ -24,6 +25,8 @@ mix_1 = Mix("001: after hours",
 "001.jpeg", 
 "001tracks.jpeg",
 "slow jams,smooth jazz,r&b,funk,soul",
+"https://soundcloud.com/mmarz-mix/mmarz-001-max-salty-after-hours",
+Genre("Slow Jams"),
 dj_2)
 mix_repository.save(mix_1)
 
@@ -32,6 +35,8 @@ mix_2 = Mix("002: organic glitch",
 "002.jpeg",
 "002tracks.jpeg",
 "electronic,experimental,house",
+"https://soundcloud.com/mmarz-mix/mmarz-002-mikayla-organic-glitch",
+Genre("Electronic"),
 dj_1)
 mix_repository.save(mix_2)
 
@@ -40,6 +45,8 @@ mix_3 = Mix("003: drips n blips",
 "003.jpeg",
 "003tracks.jpeg",
 "industrial,ebm,new wave,electropunk,experimental",
+"https://soundcloud.com/mmarz-mix/mmarz-003-saffron-drips-n-blips",
+Genre("Industrial"),
 dj_3)
 mix_repository.save(mix_3)
 
@@ -48,6 +55,8 @@ mix_4 = Mix("004: pleasure pond",
 "004.webp",
 "004tracks.webp",
 "ambient,newage,hindustani,minimal techno,experimental",
+"https://soundcloud.com/mmarz-mix/mmarz-004-radha-pleasure-pond",
+Genre("Ambient"),
 dj_4)
 mix_repository.save(mix_4)
 
@@ -56,6 +65,8 @@ mix_5 = Mix("005: impossible scheme",
 "005.webp",
 "005tracks.webp",
 "electro,experimental,minimal,breaks",
+"https://soundcloud.com/mmarz-mix/mmarz-005-zach-impossible-scheme",
+Genre("Techno"),
 dj_5)
 mix_repository.save(mix_5)
 
@@ -64,6 +75,8 @@ mix_6 = Mix("006: crush",
 "006.webp",
 "006tracks.webp",
 "80s,90s,synthpop,girlpop,r&b,new jack swing",
+"https://soundcloud.com/mmarz-mix/mmarz-006-max-salty-crush",
+Genre("Pop"),
 dj_2)
 mix_repository.save(mix_6)
 
@@ -72,6 +85,8 @@ mix_7 = Mix("007: accomplished woman",
 "007.webp",
 "007tracks.webp",
 "electronic,techno,bass,eco grime",
+"https://soundcloud.com/mmarz-mix/mmarz-007-mikayla-accomplished-woman",
+Genre("Electronic"),
 dj_1)
 mix_repository.save(mix_7)
 
@@ -80,6 +95,8 @@ mix_8 = Mix("008: shut the door",
 "008.webp",
 "008tracks.webp",
 "middle eastern,krautrock,electronic,acid,minimal wave",
+"https://soundcloud.com/mmarz-mix/mmarz-008-saffron-shut-the-door",
+Genre("Electronic"),
 dj_3)
 mix_repository.save(mix_8)
 
@@ -88,6 +105,8 @@ mix_9 = Mix("009: after the flood",
 "009.jpeg",
 "009tracks.jpeg",
 "folk,classical,newage,ambient,jazz,world,ambient jazz",
+"https://soundcloud.com/mmarz-mix/mmarz-009-radha-after-the-flood",
+Genre("Ambient"),
 dj_4)
 mix_repository.save(mix_9)
 
@@ -96,7 +115,18 @@ mix_10 = Mix("010: lounge lizards from spaceport proxima",
 "010.jpeg",
 "010tracks.jpeg",
 "boogie,jazz,downtempo,disco",
+"https://soundcloud.com/mmarz-mix/mmarz-010-zach-lounge-lizards-from-spaceport-proxima",
+Genre("R&B"),
 dj_5)
 mix_repository.save(mix_10)
+
+mix_11 = Mix("011: lagoon",
+"A glowing talisman of tunes to guide you through the dark rainforest, out onto the shore, and down, down to the bottom of the sea…",
+"011.jpeg",
+"011.jpeg",
+"balearic,downtempo,ambient,spa,lagoon",
+"https://soundcloud.com/mmarz-mix/mmarz-011-max-salty-lagoon",
+Genre("Balearic"),
+dj_2)
 
 pdb.set_trace()
