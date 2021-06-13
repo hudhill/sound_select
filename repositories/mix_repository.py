@@ -25,9 +25,34 @@ def save(mix):
 
 def select_all():
     mixes = []
-
     sql = "SELECT * FROM mixes"
     results = run_sql(sql)
+
+    for row in results:
+        genre = genre_repository.select(row['genre_id'])
+        dj = dj_repository.select(row['dj_id'])
+        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['id'])
+        mixes.append(mix)
+    return mixes
+
+def select_by_dj(dj_id):
+    mixes = []
+    sql = "SELECT * FROM mixes WHERE dj_id = %s"
+    values = [dj_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        genre = genre_repository.select(row['genre_id'])
+        dj = dj_repository.select(row['dj_id'])
+        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['id'])
+        mixes.append(mix)
+    return mixes
+
+def select_by_genre(genre_id):
+    mixes = []
+    sql = "SELECT * FROM mixes WHERE genre_id = %s"
+    values = [genre_id]
+    results = run_sql(sql, values)
 
     for row in results:
         genre = genre_repository.select(row['genre_id'])

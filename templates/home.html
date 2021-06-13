@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %} 
+
+Welcome to SoundSelect.
+Find the perfect mix to match your mood.
+<hr/>
+<h1>Select a Genre</h1>
+<div id="genre-list">
+{% for genre in genres %} 
+  <a href="/genres/{{ genre.id }}" id="genre-tile" style="background-color:{{ genre.color }};"> <!-- attempting to cycle through colors for tile background -->
+    <div>
+      <h3>{{ genre.name }}</h3>
+    </div>
+  </a>
+{% endfor %}
+</div>
+
+{% endblock %}

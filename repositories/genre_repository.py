@@ -3,8 +3,8 @@ from db.run_sql import run_sql
 from models.genre import Genre
 
 def save(genre):
-    sql = "INSERT INTO genres (name) VALUES (%s) RETURNING *"
-    values = [genre.name]
+    sql = "INSERT INTO genres (name, color) VALUES (%s, %s) RETURNING *"
+    values = [genre.name, genre.color]
     results = run_sql(sql, values)
     id = results[0]['id']
     genre.id = id
@@ -16,7 +16,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        genre = Genre(row['name'], row['id'])
+        genre = Genre(row['name'], row['color'], row['id'])
         genres.append(genre)
 
     return genres
@@ -29,7 +29,7 @@ def select(id):
 
     if len(result) > 0:
         genre_dict = result[0]
-        genre = Genre(genre_dict['name'], genre_dict['id'])
+        genre = Genre(genre_dict['name'], genre_dict['color'], genre_dict['id'])
     return genre
 
 def delete_all():

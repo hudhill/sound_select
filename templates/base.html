@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sounds</title>
+  <title>SoundSelect</title>
   <!-- links to style sheets -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <header>
     <nav>
-      <ul>
+      <ul id="menu">
         <!-- navbar menu links -->
-        <li><a href="/">Home</a></li>
+        <li><a href="/" id="logo">SoundSelect</a></li>  <!-- style this uniquely -->
         <li><a href="/mixes">Mixes</a></li>
         <li><a href="/djs">DJs</a></li>
         <li><a href="/mixes/new">Add Mix</a></li>
-        <li><a href="https://soundcloud.com/mmarz-mix">SOUNDCLOUD</a></li>
+        <li><a href="https://soundcloud.com/mmarz-mix">LISTEN</a></li>
       </ul>
     </nav>
   </header>
   {% block content %}
   {% endblock %}
+  <footer>featuring mixes and artwork from MMARZ</footer>
 </body>
 </html>

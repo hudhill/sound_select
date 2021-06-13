@@ -1,0 +1,53 @@
+header {
+  background-color:#373636;
+  color:whitesmoke;
+  text-align: center;
+  padding: 5px;
+}
+
+body {
+  font-family: monospace;
+}
+
+#menu {
+  display: flex;
+}
+  #menu li:first-child {
+    margin-right: auto;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+  }
+  #menu li {
+    list-style: none;
+  }
+  #menu a {
+    margin: 2px;
+    background-color: thistle;
+    display: block;
+    padding: 15px;
+  }
+
+#genre-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#genre-tile {
+  color: whitesmoke;
+  border: 1px solid black;
+  min-height: 100px;
+  min-width: 200px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;  /* gets rid of the underline on the link text */
+}
+
+footer {
+  background-color:#373636;
+  color: whitesmoke;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}

@@ -52,8 +52,9 @@ def create_dj():
 @djs_blueprint.route("/djs/<id>")
 def show_dj(id):
     dj = dj_repository.select(id)
+    mixes = mix_repository.select_by_dj(id)
 
-    return render_template("djs/show.html", dj=dj)
+    return render_template("djs/show.html", dj=dj, mixes=mixes)
 
 # edit
 @djs_blueprint.route("/djs/<id>/edit")
