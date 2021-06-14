@@ -40,7 +40,7 @@ mix_2 = Mix("002: organic glitch",
 "002tracks.jpeg",
 "electronic,experimental,house",
 "https://soundcloud.com/mmarz-mix/mmarz-002-mikayla-organic-glitch",
-Genre("Electronic", "#C86006"),
+Genre("Electronic", "#02A7FC"),
 mikayla)
 mix_repository.save(mix_2)
 
@@ -90,7 +90,7 @@ mix_7 = Mix("007: accomplished woman",
 "007tracks.webp",
 "electronic,techno,bass,eco grime",
 "https://soundcloud.com/mmarz-mix/mmarz-007-mikayla-accomplished-woman",
-Genre("Electronic", "#C86006"),
+Genre("Electronic", "#02A7FC"),
 mikayla)
 mix_repository.save(mix_7)
 
@@ -100,7 +100,7 @@ mix_8 = Mix("008: shut the door",
 "008tracks.webp",
 "middle eastern,krautrock,electronic,acid,minimal wave",
 "https://soundcloud.com/mmarz-mix/mmarz-008-saffron-shut-the-door",
-Genre("Electronic", "#C86006"),
+Genre("Electronic", "#02A7FC"),
 ari)
 mix_repository.save(mix_8)
 
