@@ -31,7 +31,8 @@ mix_1 = Mix("001: after hours",
 "slow jams,smooth jazz,r&b,funk,soul",
 "https://soundcloud.com/mmarz-mix/mmarz-001-max-salty-after-hours",
 Genre("Slow Jams", "#710300"),
-max)
+max,
+True)
 mix_repository.save(mix_1)
 
 mix_2 = Mix("002: organic glitch",

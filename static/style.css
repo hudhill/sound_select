@@ -8,24 +8,38 @@ header {
 
 body {
   font-family: monospace;
+  list-style-type: none;
 }
 
 #menu {
   display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  /* flex-direction: row; */
+  /* justify-content: center; */
 }
+  #menu li {
+    list-style: none;
+    float:right;
+  }
   #menu li:first-child {
     margin-right: auto;
+    float:left;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: large;
   }
-  #menu li {
-    list-style: none;
-  }
-  #menu a {
+  #menu li a {
     margin: 2px;
     background-color: thistle;
     display: block;
     padding: 15px;
+    text-decoration: none;
+  }
+  #menu li a:hover {
+    color: black;
+    background-color: whitesmoke;
   }
 
 #genre-list {
@@ -36,13 +50,20 @@ body {
 }
 
 #genre-tile {
-  color: whitesmoke;
+  color:black;
+  display: block;
+  font-size: large;
   border: 1px solid black;
   min-height: 100px;
   min-width: 200px;
   margin: 10px;
+  padding-top: 20px;
   text-align: center;
   text-decoration: none;  /* gets rid of the underline on the link text */
+}
+#genre-tile:hover {
+  background-color: whitesmoke;
+  font-size: medium;
 }
 
 footer {

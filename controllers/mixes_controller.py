@@ -34,11 +34,12 @@ def create_mix():
     tracklist_img = request.form["tracklist_img"]
     genre_tags = request.form["genre_tags"]
     audio_link = request.form["audio_link"]
+    mysource = request.form["mysource"]
     genre_id = request.form["genre_id"]
     genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)
-    new_mix = Mix(title, description, mix_img, tracklist_img, genre_tags, audio_link, genre, dj)
+    new_mix = Mix(title, description, mix_img, tracklist_img, genre_tags, audio_link, genre, dj, mysource)
     mix_repository.save(new_mix)
 
     return redirect("/mixes")
@@ -68,11 +69,12 @@ def update_mix(id):
     tracklist_img = request.form["tracklist_img"]
     genre_tags = request.form["genre_tags"]
     audio_link = request.form["audio_link"]
+    mysource = request.form["mysource"]
     genre_id = request.form["genre_id"]
     genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
     dj = dj_repository.select(dj_id)
-    updated_mix = Mix(title, description, mix_img, tracklist_img, genre_tags, audio_link, genre, dj, id)
+    updated_mix = Mix(title, description, mix_img, tracklist_img, genre_tags, audio_link, genre, dj, mysource, id)
     mix_repository.update(updated_mix)
 
     return redirect("/mixes")

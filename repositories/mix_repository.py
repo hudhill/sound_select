@@ -5,7 +5,7 @@ import repositories.dj_repository as dj_repository
 import repositories.genre_repository as genre_repository
 
 def save(mix):
-    sql = "INSERT INTO mixes (title, description, mix_img, tracklist_img, genre_tags, audio_link, genre_id, dj_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO mixes (title, description, mix_img, tracklist_img, genre_tags, audio_link, mysource, genre_id, dj_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
     
     genres = genre_repository.select_all()
     genre_names = []
@@ -17,7 +17,7 @@ def save(mix):
     if mix.genre.name not in genre_names:
         genre_repository.save(mix.genre)
 
-    values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.genre.id, mix.dj.id]
+    values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.mysource, mix.genre.id, mix.dj.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     mix.id = id
@@ -31,7 +31,7 @@ def select_all():
     for row in results:
         genre = genre_repository.select(row['genre_id'])
         dj = dj_repository.select(row['dj_id'])
-        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['id'])
+        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['mysource'], row['id'])
         mixes.append(mix)
     return mixes
 
@@ -44,7 +44,7 @@ def select_by_dj(dj_id):
     for row in results:
         genre = genre_repository.select(row['genre_id'])
         dj = dj_repository.select(row['dj_id'])
-        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['id'])
+        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['mysource'], row['id'])
         mixes.append(mix)
     return mixes
 
@@ -57,7 +57,19 @@ def select_by_genre(genre_id):
     for row in results:
         genre = genre_repository.select(row['genre_id'])
         dj = dj_repository.select(row['dj_id'])
-        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['id'])
+        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['mysource'], row['id'])
+        mixes.append(mix)
+    return mixes
+
+def select_by_mysource():
+    mixes = []
+    sql = "SELECT * FROM mixes WHERE mysource = True"
+    results = run_sql(sql)
+
+    for row in results:
+        genre = genre_repository.select(row['genre_id'])
+        dj = dj_repository.select(row['dj_id'])
+        mix = Mix(row['title'], row['description'], row['mix_img'], row['tracklist_img'], row['genre_tags'], row['audio_link'], genre, dj, row['mysource'], row['id'])
         mixes.append(mix)
     return mixes
 
@@ -70,7 +82,7 @@ def select(id):
     if result is not None:
         genre = genre_repository.select(result['genre_id'])
         dj = dj_repository.select(result['dj_id'])
-        mix = Mix(result['title'], result['description'], result['mix_img'], result['tracklist_img'], result['genre_tags'], result['audio_link'], genre, dj, result['id'])
+        mix = Mix(result['title'], result['description'], result['mix_img'], result['tracklist_img'], result['genre_tags'], result['audio_link'], genre, dj, result['mysource'], result['id'])
     return mix
 
 def delete_all():
@@ -83,6 +95,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(mix):
-    sql = "UPDATE mixes SET (title, description, mix_img, tracklist_img, genre_tags, audio_link, genre_id, dj_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE ID = %s"
-    values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.genre.id, mix.dj.id, mix.id]
+    sql = "UPDATE mixes SET (title, description, mix_img, tracklist_img, genre_tags, audio_link, mysource, genre_id, dj_id) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE ID = %s"
+    values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.mysource, mix.genre.id, mix.dj.id, mix.id]
     run_sql(sql, values)
