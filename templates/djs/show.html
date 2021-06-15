@@ -1,39 +1,27 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-<div>
-  <h1>{{ dj.name }}</h1>
-  <hr/>
-  <a href="/djs/{{ dj.id }}/edit">Edit</a>
-</div>
-
-{% for mix in mixes %}
+<h1 style="text-align: center;">{{ dj.name }}:</h1>
+<a href="/djs/{{ dj.id }}/edit">Edit</a>
 <hr/>
-<div>
+
+<div class="mix-container">
+{% for mix in mixes %}
+<div class="mix">
 
   <div>
-    <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
-    <p>({{ mix.genre.name }})</p>
+    <p>{{ mix.title }}</p>
+    <p><a style="color:{{ mix.genre.color }}" href="/genres/{{ mix.genre.id }}">{{ mix.genre.name }}</a></p>
   </div>
   
-  <a href="{{ mix.audio_link }}">-->soundcloud</a> <!-- format better -->
-
-  <div>
-    <img src="/static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="100" height="100" />
-  </div>
-
-  <div>
-    <img src="/static/img/tracklist/{{ mix.tracklist_img }}" alt="tracklist" width="100" height="100" />
-  </div>
-
-  <div>
-    <form action="/mixes/{{ mix.id }}/delete" method="POST">
-      <button>delete</button>
-    </form>
+  <div class="centered">
+    <a href="/mixes/{{ mix.id }}"><img src="/static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="200" height="200"/></a>
   </div>
 
 </div>
 {% endfor %}
+</div>
+
 <hr/>
 <a href="/mixes/new">Add Mix</a>
 

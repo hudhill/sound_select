@@ -1,27 +1,31 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-<div>
-  <a href="/djs/new">Add New DJ</a>
-</div>
+<h1 style="text-align: center;">Our Sources:</h2>
+<hr/>
 
+<div class="dj-container">
 {% for dj in djs %} 
-  <hr/>
-  <div>
-    <div>
-      <a href="/djs/{{ dj.id }}">{{ dj.name }}</a>
+  <div class="dj">
+    <div class="centered">
+      <h3>{{ dj.name }}</h3>
     </div>
     
-    <div>
-      <img src="/static/img/djs/{{ dj.img }}" alt="{{ dj.name }}" width="200" height="200" />
+    <div class="centered">
+      <a href="/djs/{{ dj.id }}"><img src="/static/img/djs/{{ dj.img }}" alt="{{ dj.name }}" width="200" height="200" /></a>
     </div>
 
-    <div>
+    <div class="centered">
       <form action="/djs/{{ dj.id }}/delete" method="POST">
-        <button>delete</button>
+        <button>delete :[</button>
       </form>
     </div>
   </div>
 {% endfor %} 
+</div>
+
+<div>
+  <a href="/djs/new">Add New Source</a>
+</div>
 
 {% endblock %}

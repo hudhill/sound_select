@@ -1,5 +1,5 @@
 header {
-  background-color:#373636;
+  background-color:#353434;
   color:whitesmoke;
   font-weight: bold;
   text-align: center;
@@ -17,8 +17,6 @@ body {
   list-style-type: none;
   margin:0;
   padding:0;
-  /* flex-direction: row; */
-  /* justify-content: center; */
 }
   #menu li {
     list-style: none;
@@ -32,7 +30,8 @@ body {
   }
   #menu li a {
     margin: 2px;
-    background-color: thistle;
+    background-color:#353434;
+    color:whitesmoke;
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -48,7 +47,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .genre {
   display: flex;
   color:black;
@@ -62,9 +60,9 @@ body {
   text-align: center;
   text-decoration: none;  /* gets rid of the underline on the link text */
 }
-  .centered {  /* this centers the text in the genre tile. works because parent element(genre) is set to flex */
-    margin: auto;
-  }
+.centered {   /*this centers the text in the genre tile. works because parent element(genre) is set to flex */
+     margin: auto;
+} 
 .genre:hover {
   background-color: whitesmoke;
   font-size: medium;
@@ -74,26 +72,28 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  /* align-items: center; */
   margin-top: 10px;
 }
-
 .mix {
   display: flex;
-  flex-basis: 22%;
-  padding: 10px;
+  flex-basis: 30%;
+  flex-direction: column;
+  padding: 15px;
+  margin: auto;
   margin-bottom: 20px;
-  border: 1px solid black;
-  min-width: 200px;
-  /* text-align: center; */
+  max-width: 200px;
+  /* text-decoration: none; */
 }
+  .mix p {
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
   .mix a {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
-    /* border: 1px rgb(20, 19, 19); */
-    /* border-radius: 2px; */
   }
+.mix a:hover {
+  opacity: 0.7;
+}
 
 /* @media(min-width:900px) {  could be useful for adding specs for very small screen
   .mix-container {
@@ -102,8 +102,28 @@ body {
     justify-content: space-between
   }
 } */
+.dj-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.dj {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  margin: auto; /* centers when parent is set to flex */
+  margin-bottom: 20px;
+  min-width: 250px;
+}
+.dj h3 {
+  margin-bottom: 0;
+}
+.dj a:hover {
+  opacity: 0.7;
+}
 
-.container {
+.form-container {
   display: flex;
   justify-content: center;
 }
@@ -125,4 +145,8 @@ footer {
 }
 footer a {
   color:whitesmoke;
+}
+
+#mix-title:hover {
+  opacity: 0.7;
 }

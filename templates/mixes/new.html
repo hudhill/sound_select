@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-<div class="container">
+<div class="form-container">
 <form action="/mixes" method="POST">
 
   <div class="form-row">
@@ -26,7 +26,7 @@
 
   <div class="form-row"> <!-- you currently have to input genres exactly as: 'genre,gen,re', not ideal. Would be good to have options too -->
     <label for="genre_tags">Genre Tags:</label>
-    <input id="genre_tags" name="genre_tags" type="text">
+    <input id="genre_tags" name="genre_tags" placeholder="seperate with commas, no spaces" type="text">
   </div>
 
   <div class="form-row">

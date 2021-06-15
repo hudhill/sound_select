@@ -2,9 +2,11 @@
 {% block content %} 
 
 {% set genre_tags = mix.genre_tags.split(",") %}
-
 <div>
-  <h1>{{ mix.title }} | {{ mix.dj.name }}</h1>
+  <h1 style="color:{{ mix.genre.color }}">{{ mix.title }} | <a id="mix-title" style="text-decoration: none; color:black" href="/djs/{{ mix.dj.id }}">{{ mix.dj.name }}</a></h1>
+  <form action="/mysource/{{ mix.id }}" method="POST">
+    <button type="submit">Add to MySource</button>
+  </form>
   <hr/>
   <p>{{ mix.description }}</p>
   <p><i>--{% for genre_tag in genre_tags %}{% if loop.index == loop.length %}{{ genre_tag }}{% else %}{{ genre_tag }}, {% endif %}{% endfor %}--</i></p>
@@ -13,11 +15,7 @@
 <a href="{{ mix.audio_link }}">
   <i class="fab fa-soundcloud"></i>
   <span>mmarz - {{mix.title}} | {{ mix.dj.name }}</span>
-</a> <!-- format better -->
-
-<form action="/mysource/{{ mix.id }}" method="POST"> <!-- I want this button to update mysource to true -->
-  <button type="submit">Add to MySource</button>
-</form>
+</a>
 
 <div>
   <img src="/static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="500" height="500" />
@@ -25,12 +23,12 @@
 </div>
 
 <div>
-  <a href="/mixes/{{ mix.id }}/edit">Edit</a>
+  <a href="/mixes/{{ mix.id }}/edit"><button>Edit Mix</button></a>
 </div>
 
 <div>
   <form action="/mixes/{{ mix.id }}/delete" method="POST">
-    <button>delete</button>
+    <button>!Delete Mix!</button>
   </form>
 </div>
 

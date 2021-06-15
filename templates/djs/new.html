@@ -1,14 +1,15 @@
 {% extends "base.html" %} 
 {% block content %} 
 
+<div class="form-container">
 <form action="/djs" method="POST">
 
-  <div>
+  <div class="form-row">
     <label for="name">DJ Name:</label>
     <input id="name" name="name" type="text" required>
   </div>
 
-  <div>
+  <div class="form-row">
     <label for="bio">Bio:</label>
     <input id="bio" name="bio" type="text" required>
   </div>
@@ -16,5 +17,5 @@
   <button type="submit">Submit</button>
 
 </form>
-
+</div>
 {% endblock %}

@@ -1,24 +1,21 @@
 {% extends "base.html" %} 
 {% block content %} 
 
+<h1 style="text-align: center;">My Source</h1>
+<hr/>
+
+<div class="mix-container">
 {% for mix in mixes %} 
-  <hr/>
-  <div>
+  <div class="mix">
 
     <div>
-      <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
-      <p>{{ mix.dj.name }}</p>
-      <p>({{ mix.genre.name }})</p>
+      <p>{{ mix.title }}</p>
+      <p><a style="color:black" href="/djs/{{ mix.dj.id }}">{{ mix.dj.name }}</a></p>
+      <p><a style="color:{{ mix.genre.color }}" href="/genres/{{ mix.genre.id }}">{{ mix.genre.name }}</a></p>
     </div>
     
-    <a href="{{ mix.audio_link }}">-->soundcloud</a> <!-- format better -->
-
-    <div>
-      <img src="static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="100" height="100" />
-    </div>
-
-    <div>
-      <img src="static/img/tracklist/{{ mix.tracklist_img }}" alt="tracklist" width="100" height="100" />
+    <div class="centered">
+      <a href="/mixes/{{ mix.id }}"><img src="/static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="200" height="200"/></a>
     </div>
 
     <div>
@@ -29,5 +26,6 @@
 
   </div>
 {% endfor %} 
+</div>
 
 {% endblock %}

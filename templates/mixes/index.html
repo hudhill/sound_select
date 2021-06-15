@@ -5,19 +5,19 @@
 {% for mix in mixes %} 
   <div class="mix">
 
-    <div class="centered">
-      <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
-      <p style="color:{{ mix.genre.color }}">({{ mix.genre.name }})</p>  <!-- genre color theme continued -->
+    <div>
+      <p>{{ mix.title }}</p>
+      <p><a style="color:{{ mix.genre.color }}" href="/genres/{{ mix.genre.id }}">{{ mix.genre.name }}</p>  <!-- genre color theme continued -->
     </div>
 
     <div class="centered">
-      <img src="static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="100" height="100" />
+      <a href="/mixes/{{ mix.id }}"><img src="static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="200" height="200"/></a>
     </div>
 
   </div>
 {% endfor %} 
 </div>
-<hr/>
-<a href="/mixes/new">Add Mix</a>
+
+<a href="/mixes/new">Add New Mix</a>
 
 {% endblock %}
