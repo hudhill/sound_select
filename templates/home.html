@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %} 
 
-<h2 style="text-align: center;">Welcome to SoundSource. Find your perfect mix to match the mood.</h2>
+<h2 style="text-align: center;">Welcome to SoundSource. Find the perfect mix to match the mood.</h2>
 <hr/>
-<div id="genre-list">
+<div class="genre-container">
 {% for genre in genres %} 
-  <a href="/genres/{{ genre.id }}" id="genre-tile" style="color:{{ genre.color }}"> <!-- attempting to cycle through colors for tile background -->
-    <div>
+  <a href="/genres/{{ genre.id }}" class="genre" style="color:{{ genre.color }}"> <!-- attempting to cycle through colors for tile background -->
+    <div class="centered-text">
       <h3>{{ genre.name }}</h3>
     </div>
   </a>

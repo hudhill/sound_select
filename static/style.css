@@ -42,14 +42,15 @@ body {
     background-color: whitesmoke;
   }
 
-#genre-list {
+.genre-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
 
-#genre-tile {
+.genre {
+  display: flex;
   color:black;
   display: block;
   font-size: large;
@@ -61,9 +62,58 @@ body {
   text-align: center;
   text-decoration: none;  /* gets rid of the underline on the link text */
 }
-#genre-tile:hover {
+  .centered {  /* this centers the text in the genre tile. works because parent element(genre) is set to flex */
+    margin: auto;
+  }
+.genre:hover {
   background-color: whitesmoke;
   font-size: medium;
+}
+
+.mix-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-top: 10px;
+}
+
+.mix {
+  display: flex;
+  flex-basis: 22%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  min-width: 200px;
+  /* text-align: center; */
+}
+  .mix a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    /* border: 1px rgb(20, 19, 19); */
+    /* border-radius: 2px; */
+  }
+
+/* @media(min-width:900px) {  could be useful for adding specs for very small screen
+  .mix-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between
+  }
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-row {
+  padding: 10px;
+  display: flex;
+}
+.form-row input {
+  flex: 1;
 }
 
 footer {

@@ -1,34 +1,22 @@
 {% extends "base.html" %} 
 {% block content %} 
 
+<div class="mix-container">
 {% for mix in mixes %} 
-  <hr/>
-  <div>
+  <div class="mix">
 
-    <div>
+    <div class="centered">
       <a href="/mixes/{{ mix.id }}">{{ mix.title }}</a>
-      <p>{{ mix.dj.name }}</p>
-      <p>({{ mix.genre.name }})</p>
+      <p style="color:{{ mix.genre.color }}">({{ mix.genre.name }})</p>  <!-- genre color theme continued -->
     </div>
-    
-    <a href="{{ mix.audio_link }}">-->soundcloud</a> <!-- format better -->
 
-    <div>
+    <div class="centered">
       <img src="static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="100" height="100" />
-    </div>
-
-    <div>
-      <img src="static/img/tracklist/{{ mix.tracklist_img }}" alt="tracklist" width="100" height="100" />
-    </div>
-
-    <div>
-      <form action="/mixes/{{ mix.id }}/delete" method="POST">
-        <button>delete</button>
-      </form>
     </div>
 
   </div>
 {% endfor %} 
+</div>
 <hr/>
 <a href="/mixes/new">Add Mix</a>
 
