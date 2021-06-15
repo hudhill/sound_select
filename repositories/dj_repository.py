@@ -3,8 +3,8 @@ from db.run_sql import run_sql
 from models.dj import Dj
 
 def save(dj):
-    sql = "INSERT INTO djs (name, bio) VALUES (%s, %s) RETURNING *"
-    values = [dj.name, dj.bio]
+    sql = "INSERT INTO djs (name, img) VALUES (%s, %s) RETURNING *"
+    values = [dj.name, dj.img]
     results = run_sql(sql, values)
     id = results[0]['id']
     dj.id = id
@@ -16,7 +16,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        dj = Dj(row['name'], row['bio'], row['id'])
+        dj = Dj(row['name'], row['img'], row['id'])
         djs.append(dj)
 
     return djs
@@ -29,7 +29,7 @@ def select(id):
 
     if len(result) > 0:
         dj_dict = result[0]
-        dj = Dj(dj_dict['name'], dj_dict['bio'], dj_dict['id'])
+        dj = Dj(dj_dict['name'], dj_dict['img'], dj_dict['id'])
     return dj
 
 def delete_all():
@@ -42,6 +42,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(dj):
-    sql = "UPDATE djs SET (name, bio) = (%s, %s) WHERE ID = %s"
-    values = [dj.name, dj.bio, dj.id]
+    sql = "UPDATE djs SET (name, img) = (%s, %s) WHERE ID = %s"
+    values = [dj.name, dj.img, dj.id]
     run_sql(sql, values)

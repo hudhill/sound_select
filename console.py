@@ -11,18 +11,16 @@ mix_repository.delete_all()
 dj_repository.delete_all()
 genre_repository.delete_all()
 
-mikayla = Dj("Ruling Planet", "Mikayla's bio")
+mikayla = Dj("Ruling Planet", "mikayla.webp")
 dj_repository.save(mikayla)
-max = Dj("Max Salty", "Max's bio")
+max = Dj("Max Salty", "max.webp")
 dj_repository.save(max)
-ari = Dj("Saffron", "Ari's bio")
+ari = Dj("Saffron", "ari.webp")
 dj_repository.save(ari)
-radha = Dj("Radha", "Radha's bio")
+radha = Dj("Radha", "radha.webp")
 dj_repository.save(radha)
-zach = Dj("Zach", "Zach's bio")
+zach = Dj("Zach", "zach.webp")
 dj_repository.save(zach)
-guest = Dj("Guest", "Sometimes we have guests!")
-dj_repository.save(guest)
 
 mix_1 = Mix("001: after hours", 
 "I'm glad you're home, baby. Here, let me take that for you. You've worked so hard all day... Why don't you go unwind by the fire and I'll pour us some of that red we've been saving? Welcome to the After Hours...",
@@ -30,7 +28,7 @@ mix_1 = Mix("001: after hours",
 "001tracks.jpeg",
 "slow jams,smooth jazz,r&b,funk,soul",
 "https://soundcloud.com/mmarz-mix/mmarz-001-max-salty-after-hours",
-Genre("Slow Jams", "#710300"),
+Genre("Slow Jams", "#330000"),
 max,
 True)
 mix_repository.save(mix_1)
@@ -41,7 +39,7 @@ mix_2 = Mix("002: organic glitch",
 "002tracks.jpeg",
 "electronic,experimental,house",
 "https://soundcloud.com/mmarz-mix/mmarz-002-mikayla-organic-glitch",
-Genre("Electronic", "#02A7FC"),
+Genre("Electronic", "#FF34B3"),
 mikayla)
 mix_repository.save(mix_2)
 
@@ -51,7 +49,7 @@ mix_3 = Mix("003: drips n blips",
 "003tracks.jpeg",
 "industrial,ebm,new wave,electropunk,experimental",
 "https://soundcloud.com/mmarz-mix/mmarz-003-saffron-drips-n-blips",
-Genre("Industrial", "#581845"),
+Genre("Industrial", "#0BB5FF"),
 ari)
 mix_repository.save(mix_3)
 
@@ -61,7 +59,7 @@ mix_4 = Mix("004: pleasure pond",
 "004tracks.webp",
 "ambient,newage,hindustani,minimal techno,experimental",
 "https://soundcloud.com/mmarz-mix/mmarz-004-radha-pleasure-pond",
-Genre("Ambient", "#135F3C"),
+Genre("Ambient", "#00FF66"),
 radha)
 mix_repository.save(mix_4)
 
@@ -71,7 +69,7 @@ mix_5 = Mix("005: impossible scheme",
 "005tracks.webp",
 "electro,experimental,minimal,breaks",
 "https://soundcloud.com/mmarz-mix/mmarz-005-zach-impossible-scheme",
-Genre("Techno", "#008FB1"),
+Genre("Techno", "#FF6103"),
 zach)
 mix_repository.save(mix_5)
 
@@ -81,7 +79,7 @@ mix_6 = Mix("006: crush",
 "006tracks.webp",
 "80s,90s,synthpop,girlpop,r&b,new jack swing",
 "https://soundcloud.com/mmarz-mix/mmarz-006-max-salty-crush",
-Genre("Pop", "#F745F7"),
+Genre("Pop", "#800080"),
 max)
 mix_repository.save(mix_6)
 
@@ -91,7 +89,7 @@ mix_7 = Mix("007: accomplished woman",
 "007tracks.webp",
 "electronic,techno,bass,eco grime",
 "https://soundcloud.com/mmarz-mix/mmarz-007-mikayla-accomplished-woman",
-Genre("Electronic", "#02A7FC"),
+Genre("Electronic", "#FF34B3"),
 mikayla)
 mix_repository.save(mix_7)
 
@@ -101,7 +99,7 @@ mix_8 = Mix("008: shut the door",
 "008tracks.webp",
 "middle eastern,krautrock,electronic,acid,minimal wave",
 "https://soundcloud.com/mmarz-mix/mmarz-008-saffron-shut-the-door",
-Genre("Electronic", "#02A7FC"),
+Genre("Electronic", "#FF34B3"),
 ari)
 mix_repository.save(mix_8)
 
@@ -111,7 +109,7 @@ mix_9 = Mix("009: after the flood",
 "009tracks.jpeg",
 "folk,classical,newage,ambient,jazz,world,ambient jazz",
 "https://soundcloud.com/mmarz-mix/mmarz-009-radha-after-the-flood",
-Genre("Ambient", "#135F3C"),
+Genre("Ambient", "#00FF66"),
 radha)
 mix_repository.save(mix_9)
 
@@ -121,7 +119,7 @@ mix_10 = Mix("010: lounge lizards from spaceport proxima",
 "010tracks.jpeg",
 "boogie,jazz,downtempo,disco",
 "https://soundcloud.com/mmarz-mix/mmarz-010-zach-lounge-lizards-from-spaceport-proxima",
-Genre("R&B", "#D68F1E"),
+Genre("R&B", "#C30000"),
 zach)
 mix_repository.save(mix_10)
 
@@ -131,7 +129,7 @@ mix_11 = Mix("011: lagoon",
 "011tracks.jpeg",
 "balearic,downtempo,ambient,spa,lagoon",
 "https://soundcloud.com/mmarz-mix/mmarz-011-max-salty-lagoon",
-Genre("Balearic", "#0F20A4"),
+Genre("Balearic", "#B23AEE"),
 max)
 mix_repository.save(mix_11)
 
@@ -141,7 +139,7 @@ mix_12 = Mix("012: ragequit",
 "012tracks.jpeg",
 "electronic,acid,techno,electro,breakbeat,ragequit,experimental",
 "https://soundcloud.com/mmarz-mix/mmarz-012-mikayla-ragequit",
-Genre("Techno", "#008FB1"),
+Genre("Techno", "#FF6103"),
 mikayla)
 mix_repository.save(mix_12)
 
@@ -151,7 +149,7 @@ mix_13 = Mix("013: tadig talayi",
 "013tracks.jpeg",
 "persian,middle eastern,funk,psych,rock,pop,bandari,classical",
 "https://soundcloud.com/mmarz-mix/mmarz-013-saffron-tadig-talayi",
-Genre("Persian", "#FF5733"),
+Genre("Persian", "#00EEEE"),
 ari)
 mix_repository.save(mix_13)
 
@@ -161,7 +159,7 @@ mix_14 = Mix("014: lightdreams",
 "014tracks.jpeg",
 "krautrock,psych-funk,psych-rock,world,kosmische,prog-rock,psych-jazz,fusion",
 "https://soundcloud.com/mmarz-mix/mmarz-014-radha-lightdreams",
-Genre("Psychedelic", "#CB117F"),
+Genre("Psychedelic", "#DC8909"),
 radha)
 mix_repository.save(mix_14)
 
@@ -171,7 +169,7 @@ mix_15 = Mix("015: my proper place",
 "015tracks.webp",
 "chamber pop,jazz,ambient,MPB,art rock",
 "https://soundcloud.com/mmarz-mix/mmarz-015-zach-my-proper-place",
-Genre("Ambient", "#135F3C"),
+Genre("Ambient", "#00FF66"),
 max)
 mix_repository.save(mix_15)
 
@@ -181,7 +179,7 @@ mix_16 = Mix("016: light show",
 "016tracks.jpeg",
 "trance,vocal trance,progressive house,techno,ambient,2000s",
 "https://soundcloud.com/mmarz-mix/mmarz-016-max-salty-light-show",
-Genre("Trance", "#18C306"),
+Genre("Trance", "#385894"),
 max)
 mix_repository.save(mix_16)
 
@@ -191,7 +189,7 @@ mix_17 = Mix("017: shrubland",
 "017tracks.jpeg",
 "experimental,ambient,musique concrète,electronic",
 "https://soundcloud.com/mmarz-mix/mmarz-017-mikayla-shrubland",
-Genre("Ambient", "#135F3C"),
+Genre("Ambient", "#00FF66"),
 mikayla)
 mix_repository.save(mix_17)
 
@@ -201,19 +199,9 @@ mix_18 = Mix("018: murda",
 "018tracks.jpeg",
 "hip-hop,rap,memphis,90s",
 "https://soundcloud.com/mmarz-mix/mmarz-018",
-Genre("Hip-Hop", "#470261"),
+Genre("Hip-Hop", "#FFCC11"),
 ari)
 mix_repository.save(mix_18)
-
-mix_19 = Mix("019: driftwood",
-"This week we're so happy to have our dear friend Sam Schulte contribute a mix for our series. I met Sam in college and we immediately connected over music. He's actually the gateway / reason I got into college radio and therefore found my way into this amazing community. Over the years we've shared tons of music/playlists with each other- so I'm very excited to have him as our first guest on mmarz :) - radha. Destress and drift out with this plaintive, mellow mix of songs near and dear to Sam.",
-"019.jpeg",
-"019tracks.jpeg",
-"world,folk,jazz,classical,soul",
-"https://soundcloud.com/mmarz-mix/mmarz-019-sam-driftwood",
-Genre("Ambient", "#135F3C"),
-guest)
-mix_repository.save(mix_19)
 
 mix_20 = Mix("020: sun kissed",
 "I had a dream the other night that I was laying in warm sand, and a wave washed over me like a cozy duvet blanket. I woke up feeling like I was kissed by the sun! This week's mix is to slow ya down, make you feel warm, serene, & ready for the summer.",
@@ -221,8 +209,108 @@ mix_20 = Mix("020: sun kissed",
 "020tracks.jpeg",
 "easy listening,soul-jazz,lounge,funk,disco,psych-funk",
 "https://soundcloud.com/mmarz-mix/mmarz-020-radha-sun-kissed",
-Genre("Soul-Jazz", "#F67307"),
+Genre("Soul-Jazz", "#9ACD32"),
 radha)
 mix_repository.save(mix_20)
+
+mix_21 = Mix("021: club rosewood",
+"My favorite kind of DJ has always been the one who keeps you guessing. Though I have a deep appreciation for those who lock into a hypnotizing groove for hours, I am usually most impressed by those who turn heads with curveball selections, drawing unexpected connections between disparate genres and eras.This mix is my imitation of that. After a few mixes with a fair amount of pretense involved, I wanted to get back to the feeling I had when I started buying up records in the first place. The tracklist includes some new favorites alongside a lot of tunes that I've been holding on to for the right moment, which only seems to happen at Club Rosewood, my favorite club in LA. I recorded this direct from vinyl in just a few takes. The mixing is far from perfect, but I also have a deep affinity for those cracks in the veneer, the moments where you can tell that it really is a human trying their best to keep things on the rails. I think this one's really good - hope you agree. ",
+"021.jpeg",
+"021tracks.jpeg",
+"disco,house,funk,techno,soca",
+"https://soundcloud.com/mmarz-mix/mmarz-021-zach-club-rosewood",
+Genre("Disco", "#6600FF"),
+zach)
+mix_repository.save(mix_21)
+
+mix_22 = Mix("022: toy factory",
+"Welcome to the Toy Factory! Watch as the cogs spin, the hammers strike, the machinery whirs and ploinks and steams... all to create shiny pop toys just for you... :)-max salty",
+"022.jpeg",
+"022tracks.jpeg",
+"synthpop,80s,new wave,sophistipop,experimental,avant garde,art of noise,beatbox",
+"https://soundcloud.com/mmarz-mix/mmarz-022-max-salty-toy-factory",
+Genre("Synthpop", "#238E68"),
+max)
+mix_repository.save(mix_22)
+
+mix_23 = Mix("023: extremely lost",
+"Haven't slept in seemingly eons. My skin is a mess. I've forgotten how to make a decent pot of coffee.",
+"023.jpeg",
+"023tracks.jpeg",
+"techno,experimental electronic,ambient,minimal,noise",
+"https://soundcloud.com/mmarz-mix/mmarz-023-mikayla-extremely-lost",
+Genre("Techno", "#FF6103"),
+mikayla)
+mix_repository.save(mix_23)
+
+mix_24 = Mix("024: black hole",
+"Come fall into a weird, grimy spiral of drug-addled post punk, gothic rock, and synth pop (⌐■_■)",
+"024.jpeg",
+"024tracks.jpeg",
+"post punk,goth rock,synth pop,industrial",
+"https://soundcloud.com/mmarz-mix/mmarz-024",
+Genre("Post Punk", "#0000FF"),
+ari)
+mix_repository.save(mix_24)
+
+mix_25 = Mix("025: june gloom",
+"june gloom? this one's for you...",
+"025.jpeg",
+"025tracks.jpeg",
+"ambient,4th world,experimental,world,classical,new wave",
+"https://soundcloud.com/mmarz-mix/mmarz-025-radha-june-gloom",
+Genre("Ambient", "#00FF66"),
+radha)
+mix_repository.save(mix_25)
+
+mix_27 = Mix("027: microdose summer",
+"Summertime, and the livin' is TRIPPY! Feel free to throw this one on at your next poolside cookout - just be sure to stay away from the grill if some sneaky dosed you too heavy. If you're zooted to the freakin' moon, maybe go looking for a different recipe. This one is for the heads taking a dip, soakin' up the sun Sheryl Crow style and enjoying the view, maybe with a teensy bit of lysergic accompaniment on board.What am I saying? Who knows. Here, have some of this punch.",
+"027.jpeg",
+"027tracks.webp",
+"chillout,balearic,new age,house,psychedelic",
+"https://soundcloud.com/mmarz-mix/mmarz-027-zach-microdose-summer",
+Genre("Chillout", "#E29578"),
+zach)
+mix_repository.save(mix_27)
+
+mix_28 = Mix("028: need ice riddim",
+"It's so hot. You need ice. There is no ice. There is only hot hot dancehall courtesy of max salty.",
+"028.jpeg",
+"028tracks.jpeg",
+"dancehall,reggae fusion,ragga,r&b,90s",
+"https://soundcloud.com/mmarz-mix/mmarz-028-max-salty-need-ice-riddim",
+Genre("Dancehall", "#FFD60A"),
+max)
+mix_repository.save(mix_28)
+
+mix_29 = Mix("029: hyperextension",
+"If you can get through the first 53 seconds of this mix, you can get through anything.",
+"029.jpeg",
+"029tracks.jpeg",
+"electro,techno,industrial,acid",
+"https://soundcloud.com/mmarz-mix/mmarz-029-mikayla-hyperextension",
+Genre("Electronic", "#FF34B3"),
+mikayla)
+mix_repository.save(mix_29)
+
+mix_31 = Mix("031: daydream",
+"A tripped out, spaaaaced out mix of stoned downbeats you can flip on when it's that time of day to stare out the window ☁️☁️☁️",
+"031.jpeg",
+"031tracks.webp",
+"trip hop,dub,downtempo,illbient,electronic",
+"https://soundcloud.com/mmarz-mix/mmarz-031",
+Genre("Trip Hop", "#10002B"),
+ari)
+mix_repository.save(mix_31)
+
+mix_32 = Mix("032: make some room",
+"some slappers for ya",
+"032.jpeg",
+"032tracks.jpeg",
+"electronic,house,acid,techno",
+"https://soundcloud.com/mmarz-mix/mmarz-032-radha-make-some-room",
+Genre("Electronic", "#FF34B3"),
+radha)
+mix_repository.save(mix_32)
 
 pdb.set_trace()

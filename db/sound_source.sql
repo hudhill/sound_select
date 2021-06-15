@@ -5,7 +5,7 @@ DROP TABLE mixes;
 CREATE TABLE djs (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    bio TEXT  -- need to get these
+    img VARCHAR(255)
 );
 
 CREATE TABLE genres (

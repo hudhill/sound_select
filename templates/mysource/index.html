@@ -21,6 +21,12 @@
       <img src="static/img/tracklist/{{ mix.tracklist_img }}" alt="tracklist" width="100" height="100" />
     </div>
 
+    <div>
+      <form action="/mysource/{{ mix.id }}/delete" method="POST">
+        <button>delete</button>
+      </form>
+    </div>
+
   </div>
 {% endfor %} 
 

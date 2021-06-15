@@ -98,3 +98,13 @@ def update(mix):
     sql = "UPDATE mixes SET (title, description, mix_img, tracklist_img, genre_tags, audio_link, mysource, genre_id, dj_id) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE ID = %s"
     values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.mysource, mix.genre.id, mix.dj.id, mix.id]
     run_sql(sql, values)
+
+def mysource_true(mix):
+    sql = "UPDATE mixes SET mysource = True WHERE ID = %s"
+    values = [mix.id]
+    run_sql(sql, values)
+
+def mysource_false(mix):
+    sql = "UPDATE mixes SET mysource = False WHERE ID = %s"
+    values = [mix.id]
+    run_sql(sql, values)

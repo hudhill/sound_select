@@ -4,13 +4,20 @@
 {% set genre_tags = mix.genre_tags.split(",") %}
 
 <div>
-  <h1>{{ mix.dj.name }} - {{ mix.title }}</h1>
+  <h1>{{ mix.title }} | {{ mix.dj.name }}</h1>
   <hr/>
   <p>{{ mix.description }}</p>
-  <p>--{% for genre_tag in genre_tags %}{% if loop.index == loop.length %}{{ genre_tag }}{% else %}{{ genre_tag }}, {% endif %}{% endfor %}--</p>
+  <p><i>--{% for genre_tag in genre_tags %}{% if loop.index == loop.length %}{{ genre_tag }}{% else %}{{ genre_tag }}, {% endif %}{% endfor %}--</i></p>
 </div>
 
-<a href="{{ mix.audio_link }}">>>SOUNDCLOUD<<</a> <!-- format better -->
+<a href="{{ mix.audio_link }}">
+  <button type="button">LISTEN</button> <!--make this a play symbol-->
+  <span>mmarz - {{mix.title}} | {{ mix.dj.name }}</span>
+</a> <!-- format better -->
+
+<form action="/mysource/{{ mix.id }}" method="POST"> <!-- I want this button to update mysource to true -->
+  <button type="submit">Add to MySource</button>
+</form>
 
 <div>
   <img src="/static/img/mix/{{ mix.mix_img }}" alt="{{ mix.title }}" width="500" height="500" />
