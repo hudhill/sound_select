@@ -2,7 +2,6 @@
 SoundSource is a web application for storing mixes. Hosts can add/edit/delete mixes as well as add/edit/delete DJs. Users can search mixes by genre or DJ and save mixes to their MySource index.
 
 Technologies Needed::
-
 Flask, psycopg2
 
 
