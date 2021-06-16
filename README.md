@@ -28,15 +28,23 @@ Users should be able to:
  view a single mix with a description, tracklist and audio link.
 
 Completed Extensions:
+
 Users are able to add and delete mixes from their personal MySource index.
+
 Genres are added only when unique.
+
 Genres have an associated color theme, which carries through the app.
 
 Possible Additional Extensions:
+
 Some mixes may have more than one DJ (many to many).
+
 Users can request a new mix either by DJ or by genre, and pay for the mix.
+
 Users could be able to rate mixes. 
+
 There could be a button that picks a random mix for the user.
 
 Inspired By:
+
 Mixcloud
