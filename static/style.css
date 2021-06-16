@@ -1,5 +1,5 @@
 header {
-  background-color:#353434;
+  background-color:#161616;
   color:whitesmoke;
   font-weight: bold;
   text-align: center;
@@ -25,16 +25,16 @@ body {
   #menu li:first-child {
     margin-right: auto;
     float:left;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: large;
+    font-family:'Chango';
   }
   #menu li a {
     margin: 2px;
-    background-color:#353434;
     color:whitesmoke;
     display: block;
-    padding: 15px;
+    padding: 12px;
+    margin-right: 50px;
     text-decoration: none;
+    font-size: large;
   }
   #menu li a:hover {
     color: black;
@@ -76,13 +76,11 @@ body {
 }
 .mix {
   display: flex;
-  flex-basis: 30%;
   flex-direction: column;
   padding: 15px;
   margin: auto;
   margin-bottom: 20px;
   max-width: 200px;
-  /* text-decoration: none; */
 }
   .mix p {
     font-weight: bold;
@@ -92,16 +90,9 @@ body {
     text-decoration: none;
   }
 .mix a:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
-/* @media(min-width:900px) {  could be useful for adding specs for very small screen
-  .mix-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between
-  }
-} */
 .dj-container {
   display: flex;
   flex-flow: row wrap;
@@ -111,8 +102,7 @@ body {
 .dj {
   display: flex;
   flex-direction: column;
-  flex-basis: 30%;
-  margin: auto; /* centers when parent is set to flex */
+  margin: auto;
   margin-bottom: 20px;
   min-width: 250px;
 }
@@ -120,7 +110,7 @@ body {
   margin-bottom: 0;
 }
 .dj a:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .form-container {
@@ -137,7 +127,7 @@ body {
 }
 
 footer {
-  background-color:#373636;
+  background-color:#161616;
   color: whitesmoke;
   font-weight: bold;
   text-align: center;
@@ -145,8 +135,26 @@ footer {
 }
 footer a {
   color:whitesmoke;
+  text-decoration: none;
+}
+footer a:hover {
+  color:black;
+  background-color:whitesmoke;
 }
 
 #mix-title:hover {
-  opacity: 0.7;
+  opacity: 0.5;
+}
+
+#audio-link {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+#audio-link:hover {
+  opacity: 0.5;
+}
+
+button:hover {
+  color:red;
 }

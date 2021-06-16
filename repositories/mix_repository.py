@@ -35,7 +35,7 @@ def select_all():
         mixes.append(mix)
     return mixes
 
-def select_by_dj(dj_id):
+def select_by_dj(dj_id):  # in use in djs controller
     mixes = []
     sql = "SELECT * FROM mixes WHERE dj_id = %s"
     values = [dj_id]
@@ -48,7 +48,7 @@ def select_by_dj(dj_id):
         mixes.append(mix)
     return mixes
 
-def select_by_genre(genre_id):
+def select_by_genre(genre_id):  # in use in genres controller
     mixes = []
     sql = "SELECT * FROM mixes WHERE genre_id = %s"
     values = [genre_id]
@@ -61,7 +61,7 @@ def select_by_genre(genre_id):
         mixes.append(mix)
     return mixes
 
-def select_by_mysource():
+def select_by_mysource():  # in use in mysource controller
     mixes = []
     sql = "SELECT * FROM mixes WHERE mysource = True"
     results = run_sql(sql)
@@ -99,12 +99,12 @@ def update(mix):
     values = [mix.title, mix.description, mix.mix_img, mix.tracklist_img, mix.genre_tags, mix.audio_link, mix.mysource, mix.genre.id, mix.dj.id, mix.id]
     run_sql(sql, values)
 
-def mysource_true(mix):
+def mysource_true(mix):  # in use in mysource controller
     sql = "UPDATE mixes SET mysource = True WHERE ID = %s"
     values = [mix.id]
     run_sql(sql, values)
 
-def mysource_false(mix):
+def mysource_false(mix):  # in use in mysource controller
     sql = "UPDATE mixes SET mysource = False WHERE ID = %s"
     values = [mix.id]
     run_sql(sql, values)

@@ -9,7 +9,7 @@ def save(genre):
     id = results[0]['id']
     genre.id = id
 
-def select_all():
+def select_all():  # in use in mixes controller
     genres = []
 
     sql = "SELECT * FROM genres"
@@ -32,6 +32,6 @@ def select(id):
         genre = Genre(genre_dict['name'], genre_dict['color'], genre_dict['id'])
     return genre
 
-def delete_all():
+def delete_all():  # in use in console
     sql = "DELETE FROM genres"
     run_sql(sql)

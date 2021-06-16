@@ -5,14 +5,17 @@
 <div>
   <h1 style="color:{{ mix.genre.color }}">{{ mix.title }} | <a id="mix-title" style="text-decoration: none; color:black" href="/djs/{{ mix.dj.id }}">{{ mix.dj.name }}</a></h1>
   <form action="/mysource/{{ mix.id }}" method="POST">
+    <i class="fas fa-plus"></i>
     <button type="submit">Add to MySource</button>
+    <i class="fas fa-plus"></i>
   </form>
   <hr/>
   <p>{{ mix.description }}</p>
   <p><i>--{% for genre_tag in genre_tags %}{% if loop.index == loop.length %}{{ genre_tag }}{% else %}{{ genre_tag }}, {% endif %}{% endfor %}--</i></p>
 </div>
 
-<a href="{{ mix.audio_link }}">
+<a id="audio-link" href="{{ mix.audio_link }}">
+  <span>LISTEN:  </span>
   <i class="fab fa-soundcloud"></i>
   <span>mmarz - {{mix.title}} | {{ mix.dj.name }}</span>
 </a>
@@ -28,7 +31,7 @@
 
 <div>
   <form action="/mixes/{{ mix.id }}/delete" method="POST">
-    <button>!Delete Mix!</button>
+    <button>! Delete Mix !</button>
   </form>
 </div>
 

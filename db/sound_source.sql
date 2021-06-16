@@ -24,5 +24,5 @@ CREATE TABLE mixes (
     audio_link VARCHAR(255),
     mysource BOOLEAN,
     genre_id INT REFERENCES genres(id),
-    dj_id INT REFERENCES djs(id)
+    dj_id INT REFERENCES djs(id) ON DELETE CASCADE
 );

@@ -45,6 +45,14 @@
   </div>
 
   <div class="form-row">
+    <label for="mysource">Add to MySource?</label>
+    <select id="mysource" name="mysource">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+
+  <div class="form-row">
     <label for="dj">DJ:</label>
     <select id="dj" name="dj_id">
       {% for dj in djs %} 

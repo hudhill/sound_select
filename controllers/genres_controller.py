@@ -21,7 +21,7 @@ def create_genre():
     new_genre = Genre(name, color)
     genre_repository.save(new_genre)
     
-    return redirect("/mixes/new")
+    return redirect("/mixes/new")  # only in use when creating new mix, so redirects you to new mix form
 
 # show
 @genres_blueprint.route("/genres/<id>")

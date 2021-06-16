@@ -29,8 +29,7 @@ mix_1 = Mix("001: after hours",
 "slow jams,smooth jazz,r&b,funk,soul",
 "https://soundcloud.com/mmarz-mix/mmarz-001-max-salty-after-hours",
 Genre("Slow Jams", "#330000"),
-max,
-True)
+max)
 mix_repository.save(mix_1)
 
 mix_2 = Mix("002: organic glitch",
@@ -312,5 +311,35 @@ mix_32 = Mix("032: make some room",
 Genre("Electronic", "#FF34B3"),
 radha)
 mix_repository.save(mix_32)
+
+mix_33 = Mix("033: tunneling",
+"You are traveling through a tunnel that stretches to infinity. A light at the end drifts further and further away. It is the only thing you can see, so you keep moving towards it.",
+"033.jpeg",
+"033tracks.jpeg",
+"minimal techno,dream house,dub techno,glitch,bass music",
+"https://soundcloud.com/mmarz-mix/mmarz-033-zach-tunneling",
+Genre("Minimal", "#1D84A0"),
+zach)
+mix_repository.save(mix_33)
+
+mix_35 = Mix("035: air",
+"To kick off mmarz’s elements series, max salty brings you a lush, dreamy mix featuring female vocalists, sensual synths, and deep dreampop pleasures, inspired by the only element you can feel but cannot see. This one is an ode to the natural hypnosis of nighttime, like getting lost in the mist.",
+"035.jpeg",
+"035tracks.jpeg",
+"dreampop,downtempo,electronic,ambient,new age,ASMR",
+"https://soundcloud.com/mmarz-mix/mmarz-035-max-salty-air",
+Genre("Dreampop", "#CB00FF"),
+max)
+mix_repository.save(mix_35)
+
+mix_36 = Mix("036: e🅐𝙧ፕ𝖍",
+"It's Virgo season!!! Time for some acid-ridden electro, breaks, and a poem about mountains.",
+"036.jpeg",
+"036tracks.jpeg",
+"abstract,acid,ambient,bass,breaks,electro,experimental",
+"https://soundcloud.com/mmarz-mix/mmarz-036-mikayla-earth",
+Genre("Acid", "#D4D902"),
+mikayla)
+mix_repository.save(mix_36)
 
 pdb.set_trace()

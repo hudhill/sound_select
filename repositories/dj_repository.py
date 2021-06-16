@@ -32,7 +32,7 @@ def select(id):
         dj = Dj(dj_dict['name'], dj_dict['img'], dj_dict['id'])
     return dj
 
-def delete_all():
+def delete_all():  # in use in console
     sql = "DELETE FROM djs"
     run_sql(sql)
 

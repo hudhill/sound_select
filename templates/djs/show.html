@@ -1,8 +1,6 @@
 {% extends "base.html" %} 
 {% block content %} 
-
-<h1 style="text-align: center;">{{ dj.name }}:</h1>
-<a href="/djs/{{ dj.id }}/edit">Edit</a>
+<h1 style="text-align: center;">{{ dj.name }}'s Mixes:</h1>
 <hr/>
 
 <div class="mix-container">
@@ -23,6 +21,13 @@
 </div>
 
 <hr/>
-<a href="/mixes/new">Add Mix</a>
+
+<a href="/djs/{{ dj.id }}/edit"><button>Edit Source</button></a>
+
+<div>
+  <form action="/djs/{{ dj.id }}/delete" method="POST">
+    <button>Delete Source :[</button>
+  </form>
+</div>
 
 {% endblock %}
