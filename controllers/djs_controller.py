@@ -28,7 +28,7 @@ def create_dj():
     new_dj = Dj(name, img)
     dj_repository.save(new_dj)
     
-    return redirect("/djs")
+    return redirect("/mixes/new")  # only in use when creating new mix, so redirects you to new mix form
 
 # show
 @djs_blueprint.route("/djs/<id>")

@@ -32,7 +32,7 @@ def create_mix():
     tracklist_img = request.form["tracklist_img"]
     genre_tags = request.form["genre_tags"]
     audio_link = request.form["audio_link"]
-    mysource = request.form["mysource"]
+    mysource = False
     genre_id = request.form["genre_id"]
     genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
@@ -67,7 +67,7 @@ def update_mix(id):
     tracklist_img = request.form["tracklist_img"]
     genre_tags = request.form["genre_tags"]
     audio_link = request.form["audio_link"]
-    mysource = request.form["mysource"]
+    mysource = False
     genre_id = request.form["genre_id"]
     genre = genre_repository.select(genre_id)
     dj_id = request.form["dj_id"]
