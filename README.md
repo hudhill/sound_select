@@ -43,7 +43,7 @@ Users should be able to:
 - view all mixes in a selected genre.
  
 - view a single mix with a description, tracklist and audio link.
-________
+___________________________________________
 
 Completed Extensions:
 
@@ -52,7 +52,7 @@ Completed Extensions:
 - Genres are added only when unique.
 
 - Genres have an associated color theme, which carries through the app.
-________
+________________________________________
 
 Possible Additional Extensions:
 
@@ -63,7 +63,7 @@ Possible Additional Extensions:
 - Users could be able to rate mixes. 
 
 - There could be a button that picks a random mix for the user.
-______
+______________________________________
 
 Inspired By::
 Mixcloud

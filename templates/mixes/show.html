@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-{% set genre_tags = mix.genre_tags.split(",") %}
+{% set genre_tags = mix.genre_tags.split(",") %} <!-- creates list of genre tags by splitting string in database by commas -->
 <div>
   <h1 style="color:{{ mix.genre.color }}">{{ mix.title }} | <a id="mix-title" style="text-decoration: none; color:black" href="/djs/{{ mix.dj.id }}">{{ mix.dj.name }}</a></h1>
   <form action="/mysource/{{ mix.id }}" method="POST">
