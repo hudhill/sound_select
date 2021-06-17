@@ -1,5 +1,5 @@
 # SoundSource
-SoundSource is a web application for storing mixes.
+SoundSource is a web application for storing  and searching through mixes.
 _______________________
 
 <img width="1156" alt="Screenshot 2021-06-16 at 16 38 20" src="https://user-images.githubusercontent.com/78811642/122252555-59795300-cec3-11eb-9832-22dd26b95dea.png">
