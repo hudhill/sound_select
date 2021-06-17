@@ -342,4 +342,34 @@ Genre("Acid", "#D4D902"),
 mikayla)
 mix_repository.save(mix_36)
 
+mix_37 = Mix("037: fire",
+"A demonic, depraved, and debaucherous mix for the hottest club in hell ???",
+"037.jpeg",
+"037tracks.jpeg",
+"demonic,darkwave,industrial,rock,ebm,electronic",
+"https://soundcloud.com/mmarz-mix/mmarz-037",
+Genre("Satanic", "#FF0000"),
+ari)
+mix_repository.save(mix_37)
+
+mix_38 = Mix("038: water",
+"fourth in the mmarz 'element' series: ~ water ~ ride the wave...float away...dive in...drink up // bathe in this hour long mix",
+"038.jpeg",
+"038tracks.jpeg",
+"ambient,synth-pop,electronic",
+"https://soundcloud.com/mmarz-mix/mmarz-030-radha-water",
+Genre("Ambient", "#00FF66"),
+radha)
+mix_repository.save(mix_38)
+
+mix_39 = Mix("039: m.e.t.a.l.",
+"'That's METAL!' What's metal? The clean precision of the Miracle Blade? A rusted-out sedan decomposing in the backyard? A musician pushing the soul entire through their horn? Maybe all of the above. Please consult your doctor before listening to minutes 40-51 of this mix.",
+"039.jpeg",
+"039tracks.jpeg",
+"acid techno,free jazz,electro,noise,psych rock",
+"https://soundcloud.com/mmarz-mix/mmarz-039-zach-metal",
+Genre("Experimental", "#C0C0C0"),
+zach)
+mix_repository.save(mix_39)
+
 pdb.set_trace()
