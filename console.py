@@ -372,4 +372,14 @@ Genre("Experimental", "#C0C0C0"),
 zach)
 mix_repository.save(mix_39)
 
+mix_46 = Mix("046: after hours 2: ladies' night", 
+"Elegance. Passion. Seduction. Mystery. Sex. At last, Max Salty gives you what you've been begging for: After Hours 2: Ladies' Night, the sequel to the mix that launched mmarz. The sexiest hour of your life. Again. A mix to be savored with red wine and a lover... or two. ;)",
+"046.jpeg", 
+"046tracks.jpeg",
+"slow jams,r&b,smooth jazz,funk,soul,easy listening",
+"https://soundcloud.com/mmarz-mix/mmarz-046-max-salty-after-hours-2-ladies-night",
+Genre("Slow Jams", "#330000"),
+max)
+mix_repository.save(mix_46)
+
 pdb.set_trace()
