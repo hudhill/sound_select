@@ -1,6 +1,6 @@
 # SoundSource
 SoundSource is a web application for storing  and searching through mixes.
-_______________________
+_______________
 
 <img width="1156" alt="Screenshot 2021-06-16 at 16 38 20" src="https://user-images.githubusercontent.com/78811642/122252555-59795300-cec3-11eb-9832-22dd26b95dea.png">
 
@@ -19,12 +19,33 @@ ________________________
 <img width="1154" alt="Screenshot 2021-06-16 at 16 39 34" src="https://user-images.githubusercontent.com/78811642/122253018-b5dc7280-cec3-11eb-8471-87437a2db536.png">
 
 ___________________________
+SETUP
+------
 
-Technologies Needed::
-Flask, psycopg2
+Clone down this repository
+
+Install dependencies
+
+     pip3 install flask
+     pip3 install psycopg2
+     pip3 install psycopg2-binary
+    
+Create database on local machine
+
+     createdb sound_source
+    
+cd into /project1/db and run sql file
+
+     psql -d sound_source -f sound_source.sql
+    
+Run the console.py file to populate with initial mixes or simply run flask to start with a blank app.
+
+     python3 console.py
+     flask run
 ___________________________________________________
 
-Project Brief MVP::
+Project Brief:
+-----
 
 Hosts should be able to:
 
@@ -43,18 +64,18 @@ Users should be able to:
 - view all mixes in a selected genre.
  
 - view a single mix with a description, tracklist and audio link.
-___________________________________________
 
-Completed Extensions:
+
+### Completed Extensions:
 
 - Users are able to add and delete mixes from their personal MySource index.
 
 - Genres are added only when unique.
 
 - Genres have an associated color theme, which carries through the app.
-________________________________________
 
-Possible Additional Extensions:
+
+### Possible Additional Extensions:
 
 - Some mixes may have more than one DJ (many to many).
 
