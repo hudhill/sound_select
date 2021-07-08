@@ -1,5 +1,5 @@
 # SoundSource
-SoundSource is a web application for storing  and searching through mixes.
+SoundSource is a web application for storing and searching through audio mixes.
 _______________
 
 <img width="1156" alt="Screenshot 2021-06-16 at 16 38 20" src="https://user-images.githubusercontent.com/78811642/122252555-59795300-cec3-11eb-9832-22dd26b95dea.png">
@@ -38,7 +38,7 @@ cd into /project1/db and run the sql file:
 
      psql -d sound_source -f sound_source.sql
     
-Run the console.py file to populate with the app with mixes or simply run flask to start with a blank app.
+Run the console.py file to populate the app with mixes or simply run flask to start with a blank slate.
 
      python3 console.py
      flask run
