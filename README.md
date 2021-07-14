@@ -34,7 +34,7 @@ Create a sound_source database on your local machine:
 
      createdb sound_source
     
-cd into /project1/db and run the sql file:
+cd into db and run the sql file:
 
      psql -d sound_source -f sound_source.sql
     
